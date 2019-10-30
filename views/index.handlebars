@@ -1,4 +1,25 @@
-<div class="no-new-content">
+<div class="new-content">
+    <h2>Articles:</h2>
+    {{#each articles}}
+    {{#unless saved }}
+    <div class="card news-card">
+        <div class="empty">
+            
+        </div>
+        <div class="card-body">
+            <a class="card-title" href="{{link}}">
+                {{title}}</a>
+            {{!-- <a class="card-text" href="">Link</a> --}}
+            <button class="btn btn-sm btn-primary save-btn">Save</button>
+        </div>
+    </div>
+
+    {{/unless }}
+    {{/each }}
+
+</div>
+
+{{!-- <div class="no-new-content">
     <div class="nonew">
         <h4>Looks like we dont have any new articles</h4>
     </div>
@@ -15,4 +36,4 @@
             <a href="saved">Go To Saved Articles</a>
         </h4>
     </div>
-</div>
+</div> --}}
