@@ -1,1 +1,20 @@
-<h1>Saved page</h1>
+<div class="new-content">
+    <h2>Articles:</h2>
+    {{#each articles}}
+    {{#if saved }}
+    <div class="card news-card">
+        <div class="empty">
+            
+        </div>
+        <div class="card-body">
+            <a class="card-title" href="{{link}}">
+                {{title}}</a>
+            {{!-- <a class="card-text" href="">Link</a> --}}
+            <button class="btn btn-sm btn-primary delete-btn">delete</button>
+        </div>
+    </div>
+
+    {{/if }}
+    {{/each }}
+
+</div>

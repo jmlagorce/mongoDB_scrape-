@@ -1,5 +1,5 @@
 <div class="new-content">
-    <h2>Articles:</h2>
+   
     {{#each articles}}
     {{#unless saved }}
     <div class="card news-card">
@@ -9,8 +9,8 @@
         <div class="card-body">
             <a class="card-title" href="{{link}}">
                 {{title}}</a>
-            {{!-- <a class="card-text" href="">Link</a> --}}
-            <button class="btn btn-sm btn-primary save-btn">Save</button>
+            
+            <a class="btn btn-sm btn-primary save-btn" href="/saved">Save</a>
         </div>
     </div>
 

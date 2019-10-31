@@ -1,6 +1,7 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 var db = require("../models/sportsArticle");
+var mongojs = require("mongojs")
 
 module.exports = function(app) {
     
@@ -13,9 +14,23 @@ module.exports = function(app) {
 
     });
       
+    app.get("/clear", function(req, res) {
+      db.remove({}).then(function () {
+
+        res.redirect("/")
+      })
+        // Log any errors to the console
+        
+      
+    });
+
 
       app.get("/saved", function(req, res) {
-        res.render("saved");
+        db.find({}).then(data => {
+
+          res.render("saved", {articles: data});
+        })
+        
       });
 
       app.get("/scrape", function(req, res) {
@@ -40,8 +55,22 @@ module.exports = function(app) {
       });
     });
 
+    app.post("/saved/:id", function(req, res) {
+      db.update({ _id: req.params.id }, {
+        $set: {
+          read: true
+      }
+    
+      })
+    })
+    
+    
+  
+  
+
+
       app.get("*", function(req, res) {
-        res.send("NOT A PAGE");
+        res.send("Not a page");
       });
     
 
@@ -49,3 +78,5 @@ module.exports = function(app) {
 
 
     };
+
+    
