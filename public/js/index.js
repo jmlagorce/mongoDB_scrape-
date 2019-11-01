@@ -17,9 +17,19 @@ $(".save-btn").on("click", function () {
 
 
 
-// $(".delete-btn").on("click", function () {
+$(".delete-btn").on("click", function () {
+    event.preventDefault();
 
-// })
+    const savedId = this.value;
+    console.log(savedId)
+    $.ajax("/api/delete/" + savedId, {
+        type: "PUT",
+       
+      }).then(function() {
+        console.log("Updated to saved");
+        location.reload();
+      });
+})
 
 // $(".clear-btn").on("click", function() {
 //   // Make an AJAX GET request to delete the notes from the db

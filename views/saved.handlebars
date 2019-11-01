@@ -1,5 +1,5 @@
 <div class="new-content">
-    <h2>Articles:</h2>
+    
     {{#each articles}}
     {{#if saved }}
     <div class="card news-card">
@@ -10,7 +10,8 @@
             <a class="card-title" href="{{link}}">
                 {{title}}</a>
             {{!-- <a class="card-text" href="">Link</a> --}}
-            <button class="btn btn-sm btn-primary delete-btn">delete</button>
+            <button value={{this._id}} class="btn btn-sm btn-primary delete-btn">Delete</button>
+             <button><a class="btn btn-sm btn-primary comment-btn" href="/comment">Comment</a></button>
         </div>
     </div>
 

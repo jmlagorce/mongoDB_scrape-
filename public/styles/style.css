@@ -69,7 +69,7 @@ button {
 }
 
 .empty {
-    background-color: dodgerblue;
+    background-color: rgb(52,58,64);
     height: 50px;
     text-align: center;
     border-radius: 25px 25px 0px 0px;
@@ -79,3 +79,24 @@ button {
     padding: 20px;
 }
 
+.comment-btn {
+    float: right;
+}
+.delete-btn {
+    float: right;
+}
+.comment-input {
+    background-color: white;
+    color: black;
+    width: 75%;
+    position: relative;
+    left: 12%;
+    height: auto;
+}
+.title-text {
+    font-size: 30px;
+    
+}
+.forms {
+    padding: 20px;
+}

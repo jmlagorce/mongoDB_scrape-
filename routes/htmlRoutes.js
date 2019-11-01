@@ -24,7 +24,10 @@ module.exports = function(app) {
       
     });
 
-
+    app.get("/comment", function(req, res) {
+   
+      res.render("comment")
+    });
       app.get("/saved", function(req, res) {
         db.find({}).then(data => {
 
@@ -32,6 +35,7 @@ module.exports = function(app) {
         })
         
       });
+      
 
       app.get("/scrape", function(req, res) {
         axios.get("https://www.espn.com/").then(function(response) {
