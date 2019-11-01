@@ -31,6 +31,7 @@ mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes")(app);
 
   app.listen(PORT, function() {
     console.log(

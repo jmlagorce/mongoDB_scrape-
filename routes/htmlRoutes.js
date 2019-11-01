@@ -55,14 +55,7 @@ module.exports = function(app) {
       });
     });
 
-    app.post("/saved/:id", function(req, res) {
-      db.update({ _id: req.params.id }, {
-        $set: {
-          read: true
-      }
-    
-      })
-    })
+   
     
     
   

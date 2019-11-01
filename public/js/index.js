@@ -1,10 +1,18 @@
 // var db = require("../../models/sportsArticle.js");
 
-// $(".save-btn").on("click", function () {
-//   db.findOne({ id: this.id }), function () {
-//     this.saved = true
-//   }
-//   })
+$(".save-btn").on("click", function () {
+    event.preventDefault();
+
+    const savedId = this.value;
+    console.log(savedId)
+    $.ajax("/api/saved/" + savedId, {
+        type: "PUT",
+       
+      }).then(function() {
+        console.log("Updated to saved");
+        location.reload();
+      });
+  })
 
 
 
